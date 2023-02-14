@@ -1,0 +1,39 @@
+#username{
+border-radius: 5px;
+width: 200px;
+height: 30px;
+/* outline: none; */
+/* text-decoration: none; */
+background-color: white;
+border:0px solid
+}
+#password{
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: 0px solid;
+    background-color: white;
+}
+
+#submit{
+    padding:10px;
+    background-color: rgb(214, 116, 78);
+    color:black ;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: blue;
+    color: white;
+}
+#header{
+    text-align: center;
+}
+
+#sub-div{
+    padding-top: 20px;
+}
+
+

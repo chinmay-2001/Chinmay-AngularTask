@@ -1,0 +1,47 @@
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          id="password"
+          aria-describedby="password"
+          placeholder="Enter Password"
+          [(ngModel)] ="password"
+          (ngModelChange)="passwordCheck()"
+        />
+      </div>
+
+        <div *ngIf="passwordStrength==='strong'" id="responcePass1"><span>Strong Password</span></div>      
+        <div *ngIf="passwordStrength==='good'" id="responcePass2"><span>Good Password</span></div>      
+        <div *ngIf="passwordStrength==='weak'" id="responcePass3"><span>Weak Password</span></div>      
+
+      <br>
+      <div class="form-group">
+        <label for="conformPassword">Conform Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="conformPassword"
+          name="conformPassword"
+          placeholder="Conform Password"
+          [(ngModel)] ="conformPassword"
+          
+        />
+      </div>
+      
+        <div *ngIf="password===conformPassword && password!=='' && conformPassword!=='' " id="con1"><span>Password Match</span></div>
+        <div *ngIf="password!==conformPassword && password!=='' && conformPassword!==''" id="con2"><span>Password Don't Match</span></div>
+      
+      <br>
+    </form>
+  </div>
+  password:{{password}}
+  <br>
+  conformPassword:{{conformPassword}}
+</div>

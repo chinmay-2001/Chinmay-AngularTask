@@ -1,0 +1,18 @@
+<div id="section">
+<h1>My first Attribute directive</h1>
+<br>
+<h3>Pick a Highlighting color</h3>
+
+
+<input type="radio" name="color" value="green" (change)="radioChange($event)">Green
+<input type="radio" name="color" value="yellow" (change)="radioChange($event)">Yellow
+<input type="radio" name="color" value="cyan"(change)="radioChange($event)"> Cyan
+
+<h2 appTask3directive [textColor]="Color" >Hightlight Me!</h2>
+<!-- <h2 [ngStyle]="{'color':'{{Color}}'}" >Hightlight Me!</h2> -->
+
+
+
+{{Color}}
+
+</div>

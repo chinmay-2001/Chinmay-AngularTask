@@ -1,0 +1,26 @@
+<h1>~~~Product Order~~~</h1>
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <th scope="col">Order id</th>
+        <th scope="col">Product name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Bill Amount</th>
+        <th scope="col">Transaction Status</th>
+      </thead>
+      <tbody >
+        <ng-container *ngFor="let order of orders">
+          <tr *ngIf="order.transaction === 'completed'">
+            <td scope="row">{{ order.orderId }}</td>
+            <td>{{ order.productName }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.billAmount }}</td>
+            <td>{{ order.transaction }}</td>
+          </tr>
+        </ng-container>
+        
+      </tbody>
+    </table>
+  </div>
+</div>

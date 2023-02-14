@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Ragistration</h1>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row" style="padding-top: 10px">
+    <form [formGroup]="ragistration" id="group">
+      <div class="form-group mb-3">
+        <Label class="form-label">FirstName</Label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="firstname"
+          name="firstname"
+          [(ngModel)]="firstname"
+        />
+        <p
+          *ngIf="ragistration.controls['firstname'].errors"
+          class="alert alert-danger"
+        >
+          This field is required
+        </p>
+      </div>
+      <div class="form-group mb-3">
+        <label for="label" class="form-label">LastName</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="lastname"
+          name="lastname"
+          [(ngModel)]="lastname"
+        />
+        <p
+          *ngIf="ragistration.controls['lastname'].errors"
+          class="alert alert-danger"
+        >
+        
+          This field is required
+        </p>
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          value=""
+          formControlName="email"
+          [(ngModel)]="email"
+        />
+        <p
+          *ngIf="ragistration.controls['email'].errors"
+          class="alert alert-danger"
+        >
+          This field is required
+        </p>
+      </div>
+      <div class="form-group mb-3">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" class="form-control" />
+      </div>
+      <div id="radio">
+        <div >Name of the City</div>
+        <div class="form-check">
+          <input type="radio" name="city" class="form-check-input" />
+          <label for="radio" class="form-check-label">Nagpur</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="city" id="" class="form-check-input" />
+          <label class="form-check-label">Hyderabd</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="city" id="" class="form-check-input" />
+          <label class="form-check-label">Mumbai</label>
+        </div>
+      </div>
+
+      <div id="checkbox">
+        <div>Languages</div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="English"
+            name="lang1"
+            id="lang1"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            English
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Hindi"
+            id="lang2"
+            name="lang2"
+          />
+          <label class="form-check-label" for="flexCheckChecked"> Hindi </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Hindi"
+            id="lang3"
+            name="lang3"
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            Marathi
+          </label>
+        </div>
+      </div>
+    </form>
+
+    {{ firstname }}- {{ lastname }}- {{ email }}
+  </div>
+</div>

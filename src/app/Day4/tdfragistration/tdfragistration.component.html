@@ -1,0 +1,167 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Ragistration</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="padding-top: 10px">
+    <form #form="ngForm" id="group" (ngSubmit)="onsubmit()">
+      <div class="form-group mb-3">
+        <Label class="form-label">FirstName</Label>
+        <input
+          type="text"
+          class="form-control"
+          ngModel
+          #firstname="ngModel"
+          name="firstname"
+          [ngClass]="{ 'is-invalid': firstname.invalid && firstname.touched }"
+          minlength="2"
+          required
+        />
+        <div *ngIf="firstname.invalid" class="invalid-feedback">
+          <div *ngIf="firstname.errors?.['required'] && firstname.touched">
+            Firstname is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="label" class="form-label">LastName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastname"
+          ngModel
+          #lastname="ngModel"
+          [ngClass]="{ 'is-invalid': lastname.invalid && lastname.touched }"
+          required
+        />
+        <div
+          *ngIf="lastname.invalid && lastname.touched"
+          class="invalid-feedback"
+        >
+          <div *ngIf="lastname.errors?.['required'] && lastname.touched">
+            Lastname is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          email
+          ngModel
+          #email="ngModel"
+          [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
+          required
+        />
+        <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+          <div *ngIf="email.errors?.['required'] && email.touched">
+            email is required
+          </div>
+          <div *ngIf="email.errors?.['email']">Please enter correct Email</div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" class="form-control" />
+      </div>
+      <div id="radio">
+        <div>Name of the City</div>
+        <div class="form-check">
+          <input type="radio" name="city" class="form-check-input" />
+          <label for="radio" class="form-check-label">Nagpur</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="city" id="" class="form-check-input" />
+          <label class="form-check-label">Hyderabd</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="city" id="" class="form-check-input" />
+          <label class="form-check-label">Mumbai</label>
+        </div>
+      </div>
+      <br />
+      <div id="checkbox">
+        <div>Languages</div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="English"
+            name="lang1"
+            id="lang1"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            English
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Hindi"
+            id="lang2"
+            name="lang2"
+          />
+          <label class="form-check-label" for="flexCheckChecked"> Hindi </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Hindi"
+            id="lang3"
+            name="lang3"
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            Marathi
+          </label>
+        </div>
+      </div>
+      <br />
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control"
+          ngModel
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': lastname.invalid && lastname.touched }"
+          required
+        />
+        <div
+          *ngIf="password.invalid && password.touched"
+          class="invalid-feedback"
+        >
+          <div *ngIf="password.errors?.['required'] && password.touched">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="form-group mb-3">
+        <label for="ConformPassword" class="form-label">Confrom Password</label>
+        <input
+          type="ConformPassword"
+          name="ConformPassword"
+          id="ConformPassword"
+          class="form-control"
+          ngModel
+          #Conformpassword="ngModel"
+          required
+        />
+      </div>
+
+      <button type="button" class="btn btn-primary" style="width: 1300px">
+        Primary
+      </button>
+    </form>
+    <br />
+  </div>
+</div>

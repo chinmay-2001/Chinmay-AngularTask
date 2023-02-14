@@ -1,0 +1,31 @@
+
+
+<h1 id="header">Login</h1>
+
+<form #userForm="ngForm">
+    {{userForm.value | json}}
+<div>
+    <label class="form-label">Username : </label>
+    <input type="text" class="form-control" placeholder="name" name="username" id="username" [(ngModel)] ="log.id">
+</div>
+<br />
+<div >
+    <label class="form-label">Password : </label>   
+    <input type="text" id="password" name="password" class="form-control" [(ngModel)] ="log.pwd" placeholder="Password">
+    <!-- <button class="btn btn-primary">Submit</button> -->
+</div>
+<div id="sub-div">
+    <button id="submit" (click)="validate()" name="submit" [disabled]="userForm.value['username']=='' 
+                                                                    || userForm.value['password']==''
+                                                                    || userForm.value['username']!='innovapptive'
+                                                                    || userForm.value['password']!='innovapptive'">Submit</button>
+    <button id="cancel" (click)="clear()" name="clear">Clear</button>
+</div>
+</form> 
+
+<div><h4>id: {{log.id}} and  pwd: {{log.pwd}}</h4></div>
+
+
+<h3>Result: {{result}}</h3>
+
+
