@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl,Validators, MaxLengthValidator } from '@angular/forms';
+import { FormGroup,FormControl,Validators, MaxLengthValidator,FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-ragistration',
   templateUrl: './ragistration.component.html',
@@ -7,18 +7,34 @@ import { FormGroup,FormControl,Validators, MaxLengthValidator } from '@angular/f
 })
 export class RagistrationComponent {
 
+  constructor(private formbuilder:FormBuilder){}
   firstname=''
   lastname=''
   email=''
-  ragistration=new FormGroup(
-    {
-      firstname:new FormControl('',Validators.compose([Validators.required,Validators.maxLength(15)])),
-      lastname:new FormControl('',Validators.compose([Validators.required,Validators.maxLength(15),Validators.pattern('^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$')])),
-      email:new FormControl('',Validators.compose([Validators.required])) 
-    },
-    );
-    match(){
-
+  password=''
+  conformpassword=''
+  ragistration=this.formbuilder.group({
+    firstname:['',Validators.required],
+    lastname:['',Validators.required],
+    email:['',Validators.required,Validators.email],
+    password:['',Validators.required,],
+    conformpassword:['',Validators.required,],
+  })
+  // ragistration=new FormGroup(
+  //   {
+  //     firstname:new FormControl('',Validators.compose([Validators.required,Validators.maxLength(15)])),
+  //     lastname:new FormControl('',Validators.compose([Validators.required,Validators.maxLength(15)])),
+  //     email:new FormControl('',Validators.compose([Validators.required])) 
+  //   },
+  //   );
+  
+    validateEmail(c:FormGroup){
+      let EMAIL_REGEXP = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+      return EMAIL_REGEXP.test(c.value) ? null: {
+        emailError: {
+          message:"Email is invalid"
+        }
+      }
     }
 }
 

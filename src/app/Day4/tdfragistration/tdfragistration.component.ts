@@ -14,5 +14,7 @@ export class TDFRagistrationComponent {
 
   onsubmit(){
     console.log('is write')
+    console.log(this.firstname)
+    console.log(this.lastname)
   }
 }

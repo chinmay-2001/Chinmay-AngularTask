@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row" style="padding-top: 10px">
-    <form #form="ngForm" id="group" (ngSubmit)="onsubmit()">
+    <form #form="ngForm" id="group" (ngSubmit)=onsubmit()>
       <div class="form-group mb-3">
         <Label class="form-label">FirstName</Label>
         <input
@@ -71,18 +71,21 @@
       <div id="radio">
         <div>Name of the City</div>
         <div class="form-check">
-          <input type="radio" name="city" class="form-check-input" />
+          <input type="radio" name="city" class="form-check-input" ngModel #city="ngModel" />
           <label for="radio" class="form-check-label">Nagpur</label>
         </div>
         <div class="form-check">
-          <input type="radio" name="city" id="" class="form-check-input" />
+          <input type="radio" name="city" class="form-check-input" ngModel #city="ngModel" />
           <label class="form-check-label">Hyderabd</label>
         </div>
         <div class="form-check">
-          <input type="radio" name="city" id="" class="form-check-input" />
+          <input type="radio" name="city"  class="form-check-input" ngModel #city="ngModel" />
           <label class="form-check-label">Mumbai</label>
         </div>
+
+        
       </div>
+
       <br />
       <div id="checkbox">
         <div>Languages</div>
@@ -93,6 +96,7 @@
             value="English"
             name="lang1"
             id="lang1"
+            ngModel
           />
           <label class="form-check-label" for="flexCheckDefault">
             English
@@ -105,6 +109,7 @@
             value="Hindi"
             id="lang2"
             name="lang2"
+            ngModel
           />
           <label class="form-check-label" for="flexCheckChecked"> Hindi </label>
         </div>
@@ -112,9 +117,10 @@
           <input
             class="form-check-input"
             type="checkbox"
-            value="Hindi"
+            value="Marathi"
             id="lang3"
             name="lang3"
+            ngModel
           />
           <label class="form-check-label" for="flexCheckChecked">
             Marathi
@@ -131,7 +137,7 @@
           class="form-control"
           ngModel
           #password="ngModel"
-          [ngClass]="{ 'is-invalid': lastname.invalid && lastname.touched }"
+          [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
           required
         />
         <div
@@ -148,19 +154,39 @@
       <div class="form-group mb-3">
         <label for="ConformPassword" class="form-label">Confrom Password</label>
         <input
-          type="ConformPassword"
-          name="ConformPassword"
+          type="password"
+          name="Conformpassword"
           id="ConformPassword"
           class="form-control"
           ngModel
           #Conformpassword="ngModel"
+          [ngClass]="{
+            'is-invalid': Conformpassword.invalid && Conformpassword.touched
+          }"
           required
         />
-      </div>
+        <div
+          *ngIf="Conformpassword.invalid && Conformpassword.touched"
+          class="invalid-feedback"
+        >
+          <div
+            *ngIf="Conformpassword.errors?.['required'] && Conformpassword.touched"
+          >
+            Password is required
+          </div>
 
-      <button type="button" class="btn btn-primary" style="width: 1300px">
+          <div *ngIf="Conformpassword !== password">
+            Password is not correct
+          </div>
+
+        </div>
+      </div>
+      
+      <button type="button" class="btn btn-primary" style="width: 1300px" [disabled]="form.invalid" (click)="onsubmit()">
         Primary
       </button>
+
+      {{password}}
     </form>
     <br />
   </div>
