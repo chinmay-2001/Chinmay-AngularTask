@@ -21,7 +21,7 @@ import { MyFormComponent } from './Day4/my-form/my-form.component';
 import { RagistrationComponent } from './Day4/ragistration/ragistration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TDFRagistrationComponent } from './Day4/tdfragistration/tdfragistration.component';
-
+import { DateserviceService } from './dateservice.service';
 
 
 @NgModule({
@@ -58,7 +58,7 @@ import { TDFRagistrationComponent } from './Day4/tdfragistration/tdfragistration
     // MatInputModule,
     // MatFormFieldModule
   ],
-  providers: [],
+  providers: [DateserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

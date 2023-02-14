@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DateserviceService } from './dateservice.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'My first app Innovapptive';
   color:string='red';
+  constructor(private dateService:DateserviceService){ }
+  Today=this.dateService.getTodaysDate()
 }
 
 
