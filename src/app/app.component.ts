@@ -22,6 +22,13 @@ export class AppComponent {
   }
 
   name:string=''
+  courseName=''
+  clicked=false
+
+  getChild(courseName:string){
+    this.courseName = courseName
+    this.clicked=true;
+  }
 }
 
 

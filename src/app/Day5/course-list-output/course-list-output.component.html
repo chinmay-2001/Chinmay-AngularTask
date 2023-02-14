@@ -1,0 +1,16 @@
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+      <td>{{ course.courseId }}</td>
+      <td>{{ course.courseName }}</td>
+      <td><button (click)="ragister(course.courseName)">Register</button></td>
+    </tr>
+  </tbody>
+</table>

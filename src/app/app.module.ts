@@ -25,6 +25,7 @@ import { DateserviceService } from './dateservice.service';
 import { BookComponentComponent } from './Day5/book-component/book-component.component';
 import { DataSharingStudentChildToParentComponent } from './Day5/data-sharing-student-child-to-parent/data-sharing-student-child-to-parent.component';
 import { CourseListComponent } from './Day5/course-list/course-list.component';
+import { CourseListOutputComponent } from './Day5/course-list-output/course-list-output.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CourseListComponent } from './Day5/course-list/course-list.component';
     TDFRagistrationComponent,
     BookComponentComponent,
     DataSharingStudentChildToParentComponent,
-    CourseListComponent
+    CourseListComponent,
+    CourseListOutputComponent
     
   ],
   imports: [

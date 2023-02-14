@@ -30,7 +30,7 @@ Today's Date is: {{Today}}
 
 <P> From Child Component: {{data}}</P> -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <h2>Course Detail</h2>
     Select a course to view
@@ -45,4 +45,11 @@ Today's Date is: {{Today}}
     <br />
     <app-course-list [cName]="name"></app-course-list>
   </div>
-</div>
+</div> -->
+
+<app-course-list-output (onRagister)="getChild($event)"></app-course-list-output>
+
+<p *ngIf="clicked">Successfully ragister: {{courseName}}</p>
+
+
+
