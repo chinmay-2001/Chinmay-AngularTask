@@ -20,9 +20,29 @@
 <!-- <app-my-form></app-my-form> -->
 <!-- <app-ragistration></app-ragistration> -->
 <!-- <app-tdfragistration></app-tdfragistration> -->
-<div style="font-size: large; padding-top: 20px;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+<!-- <div style="font-size: large; padding-top: 20px;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 Today's Date is: {{Today}}
 </div>
 <br>
-<app-book-component></app-book-component>
+<app-book-component [myInputMeassage]="MyInputMessage"></app-book-component> 
 
+<app-data-sharing-student-child-to-parent (myOutput)="getchildData($event)"></app-data-sharing-student-child-to-parent>
+
+<P> From Child Component: {{data}}</P> -->
+
+<div class="container">
+  <div class="row">
+    <h2>Course Detail</h2>
+    Select a course to view
+
+    <select #course (change)="name = course.value">
+      <option value="NodeJS">Node JS</option>
+      <option value="Typescript">Typescript</option>
+      <option value="Angular">Angular</option>
+      <option value="ReactJS">ReactJS</option>
+    </select>
+    <br />
+    <br />
+    <app-course-list [cName]="name"></app-course-list>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { book } from './Day5/book-component/book';
 
 
 @Injectable({
@@ -7,7 +8,8 @@ import { Injectable } from '@angular/core';
 export class BookService {
 
   constructor() { }
-  getAllBook(): any {
+  // getAllBook(): any {
+  getAllBook(): book[] {
     return [{
       id: 1, "name": "HTML 5"
     },

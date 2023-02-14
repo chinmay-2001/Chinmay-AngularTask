@@ -1,0 +1,21 @@
+{{ cName }}
+
+<!-- <div class="container">
+  <div class="row"> -->
+<div style="padding-top: 50px;" >
+        
+</div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <th scope="col">Course id</th>
+        <th scope="col">Course Name</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of courses" scope="row">
+          <td *ngIf="c.courseName === cName">{{ c.courseId }}</td>
+          <td *ngIf="c.courseName === cName">{{ c.courseName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- </div>
+</div> -->

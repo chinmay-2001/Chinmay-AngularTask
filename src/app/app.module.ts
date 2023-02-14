@@ -23,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TDFRagistrationComponent } from './Day4/tdfragistration/tdfragistration.component';
 import { DateserviceService } from './dateservice.service';
 import { BookComponentComponent } from './Day5/book-component/book-component.component';
+import { DataSharingStudentChildToParentComponent } from './Day5/data-sharing-student-child-to-parent/data-sharing-student-child-to-parent.component';
+import { CourseListComponent } from './Day5/course-list/course-list.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { BookComponentComponent } from './Day5/book-component/book-component.com
     MyFormComponent,
     RagistrationComponent,
     TDFRagistrationComponent,
-    BookComponentComponent
+    BookComponentComponent,
+    DataSharingStudentChildToParentComponent,
+    CourseListComponent
     
   ],
   imports: [
