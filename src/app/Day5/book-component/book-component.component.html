@@ -1,0 +1,10 @@
+<!-- List of Book : {{bookListFromService}} -->
+<div style="text-align: center;">
+    <p style="font-weight: bold;font-size: large;">Book List</p>
+</div>
+<br>
+<div style="background-color: aliceblue; text-align: center;width: 300px;transform: translateX(40em);border-radius: 10px;">
+    <div *ngFor="let book of bookListFromService" >
+        <p>{{book.id}}- {{book.name}}</p>
+    </div>
+</div>

@@ -22,6 +22,7 @@ import { RagistrationComponent } from './Day4/ragistration/ragistration.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { TDFRagistrationComponent } from './Day4/tdfragistration/tdfragistration.component';
 import { DateserviceService } from './dateservice.service';
+import { BookComponentComponent } from './Day5/book-component/book-component.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { DateserviceService } from './dateservice.service';
     Task3directiveDirective,
     MyFormComponent,
     RagistrationComponent,
-    TDFRagistrationComponent
+    TDFRagistrationComponent,
+    BookComponentComponent
     
   ],
   imports: [
