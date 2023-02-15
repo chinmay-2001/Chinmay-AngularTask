@@ -29,6 +29,8 @@ export class AppComponent {
     this.courseName = courseName
     this.clicked=true;
   }
+
+
 }
 
 

@@ -26,6 +26,9 @@ import { BookComponentComponent } from './Day5/book-component/book-component.com
 import { DataSharingStudentChildToParentComponent } from './Day5/data-sharing-student-child-to-parent/data-sharing-student-child-to-parent.component';
 import { CourseListComponent } from './Day5/course-list/course-list.component';
 import { CourseListOutputComponent } from './Day5/course-list-output/course-list-output.component';
+import { AppRoutingModule } from './main/main-routing.module';
+import { PromisesComponent } from './Day6/promises/promises.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -51,14 +54,17 @@ import { CourseListOutputComponent } from './Day5/course-list-output/course-list
     BookComponentComponent,
     DataSharingStudentChildToParentComponent,
     CourseListComponent,
-    CourseListOutputComponent
+    CourseListOutputComponent,
+    PromisesComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
     // FormGroup,
     // FormControl,
     // FormsModule,

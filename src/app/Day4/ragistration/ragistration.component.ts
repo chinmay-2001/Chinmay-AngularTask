@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormControl,Validators, MaxLengthValidator,FormBuilder } from '@angular/forms';
+import { emailVal } from './emailValidator'; 
 @Component({
   selector: 'app-ragistration',
   templateUrl: './ragistration.component.html',
@@ -19,6 +20,8 @@ export class RagistrationComponent {
     email:['',Validators.required,Validators.email],
     password:['',Validators.required,],
     conformpassword:['',Validators.required,],
+  },{
+    validator:emailVal
   })
   // ragistration=new FormGroup(
   //   {
