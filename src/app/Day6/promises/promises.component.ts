@@ -9,12 +9,15 @@ import {HttpClient} from '@angular/common/http';
 export class PromisesComponent implements OnInit {
     constructor(private httpClient:HttpClient){}
     output:string='';
+    dic={}
     API_KEY="e40d07f00b094602953cc3bf8537477e"
     ngOnInit(){
       console.log("Angular 10 Promises")
       this.fetchData().then((data) => {
+        console.log(typeof(data))
         console.log("data" ,JSON.stringify(data))
         this.output=JSON.stringify(data);
+        this.dic=JSON.parse(JSON.stringify(data));
       }
       )
       .catch((err) => {

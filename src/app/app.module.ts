@@ -29,6 +29,11 @@ import { CourseListOutputComponent } from './Day5/course-list-output/course-list
 import { AppRoutingModule } from './main/main-routing.module';
 import { PromisesComponent } from './Day6/promises/promises.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ObservableComponent } from './Day6/observable/observable.component';
+import { ObservableTaskComponent } from './Day6/observable-task/observable-task.component';
+import { Task1DataBindingComponent } from './Day1/task1-data-binding/task1-data-binding.component';
+import { Task2EventBindingComponent } from './Day1/task2-event-binding/task2-event-binding.component';
+
 
 
 @NgModule({
@@ -55,7 +60,11 @@ import { HttpClientModule } from "@angular/common/http";
     DataSharingStudentChildToParentComponent,
     CourseListComponent,
     CourseListOutputComponent,
-    PromisesComponent
+    PromisesComponent,
+    ObservableComponent,
+    ObservableTaskComponent,
+    Task1DataBindingComponent,
+    Task2EventBindingComponent,
     
   ],
   imports: [
@@ -65,12 +74,6 @@ import { HttpClientModule } from "@angular/common/http";
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
-    // FormGroup,
-    // FormControl,
-    // FormsModule,
-    // ReactiveFormsModule,
-    // MatInputModule,
-    // MatFormFieldModule
   ],
   providers: [DateserviceService],
   bootstrap: [AppComponent]

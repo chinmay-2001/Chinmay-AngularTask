@@ -1,1 +1,15 @@
-{{output}}
+<!-- {{dic}} -->
+
+<br>
+<br>
+<div *ngFor="let out of dic | keyvalue">
+    Key : {{out.key}} , Value : {{out.value}}
+    <div *ngIf="out.key==='articles'">
+        <div *ngFor="let o of out.value |keyvalue">
+            Key: {{o.key}} - value: {{o.value}}
+            <div *ngFor="let data of o| keyvalue">
+                value: {{data.value}}
+            </div>
+        </div>
+    </div>
+</div>

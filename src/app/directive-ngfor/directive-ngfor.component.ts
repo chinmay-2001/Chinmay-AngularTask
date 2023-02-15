@@ -7,12 +7,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./directive-ngfor.component.css']
 })
 
-// @NgModule({
-//   imports: [
-//       CommonModule,
-//   ]
-// })
-
 export class DirectiveNgforComponent {
   courses: any[] = [
     	    { id: 1, name: "TypeScript" },
