@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common'
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
-import { LoginComponent } from './login/login.component';
+
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { DirectivesComponent } from './directives/directives.component';
-import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.component';
-import { DirectiveSwitchComponent } from './directive-switch/directive-switch.component';
+import { DirectivesComponent } from './Day3/directives/directives.component';
+import { DirectiveNgforComponent } from './Day3/directive-ngfor/directive-ngfor.component';
+import { DirectiveSwitchComponent } from './Day3/directive-switch/directive-switch.component';
 import { ChangetextDirective } from './changetext.directive';
 import { ButtonDirective } from './Day3/button.directive';
 import { Task1Component } from './Day3/task1/task1.component';
@@ -39,10 +37,7 @@ import { Task2EventBindingComponent } from './Day1/task2-event-binding/task2-eve
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    LoginComponent,
     CustomerComponent,
-    LoginPageComponent,
     DirectivesComponent,
     DirectiveNgforComponent,
     DirectiveSwitchComponent,
