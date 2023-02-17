@@ -31,6 +31,11 @@ import { ObservableComponent } from './Day6/observable/observable.component';
 import { ObservableTaskComponent } from './Day6/observable-task/observable-task.component';
 import { Task1DataBindingComponent } from './Day1/task1-data-binding/task1-data-binding.component';
 import { Task2EventBindingComponent } from './Day1/task2-event-binding/task2-event-binding.component';
+import { CurdApplicatonComponent } from './Day7/curd-applicaton/curd-applicaton.component';
+import { ObservableServiceTaskComponent } from './Day7/observable-service-task/observable-service-task.component';
+import { ListCompComponent } from './Day7/list-comp/list-comp.component';
+import { UpdateComponent } from './Day7/update/update.component';
+
 
 
 
@@ -60,6 +65,10 @@ import { Task2EventBindingComponent } from './Day1/task2-event-binding/task2-eve
     ObservableTaskComponent,
     Task1DataBindingComponent,
     Task2EventBindingComponent,
+    CurdApplicatonComponent,
+    ObservableServiceTaskComponent,
+    ListCompComponent,
+    UpdateComponent,
     
   ],
   imports: [

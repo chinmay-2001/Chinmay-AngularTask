@@ -20,9 +20,7 @@ export class RagistrationComponent {
     email:['',Validators.required,Validators.email],
     password:['',Validators.required,],
     conformpassword:['',Validators.required,],
-  },{
-    validator:emailVal
-  })
+  },)
   // ragistration=new FormGroup(
   //   {
   //     firstname:new FormControl('',Validators.compose([Validators.required,Validators.maxLength(15)])),
@@ -31,13 +29,13 @@ export class RagistrationComponent {
   //   },
   //   );
   
-    validateEmail(c:FormGroup){
-      let EMAIL_REGEXP = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-      return EMAIL_REGEXP.test(c.value) ? null: {
-        emailError: {
-          message:"Email is invalid"
-        }
-      }
-    }
+    // validateEmail(c:FormGroup){
+    //   // let EMAIL_REGEXP = "/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;"
+    //   // return EMAIL_REGEXP.test(c.value) ? null: {
+    //   //   emailError: {
+    //   //     message:"Email is invalid"
+    //   //   }
+    //   // }
+    // }
 }
 

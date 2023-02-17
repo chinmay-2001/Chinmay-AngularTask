@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let co of emp">
+                        <td>{{co.id}}</td>
+                        <td>{{co.name}}</td>
+                        <td><button class="btn btn-primary" (click)="update(co.id)">update</button></td>
+                        <td><button class="btn btn-alert" (click)="del(co.id)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

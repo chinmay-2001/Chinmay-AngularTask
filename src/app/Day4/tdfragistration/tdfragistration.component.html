@@ -46,24 +46,24 @@
         </div>
       </div>
       <div class="form-group mb-3">
-        <label for="email" class="form-label">Email</label>
+        <label for="email" class="form-label">Email</label> 
         <input
           type="email"
           name="email"
           class="form-control"
-          email
-          ngModel
-          #email="ngModel"
-          [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          [(ngModel)]="email"
+          #mail="ngModel"
           required
         />
-        <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
-          <div *ngIf="email.errors?.['required'] && email.touched">
-            email is required
+          <div *ngIf="mail.invalid && mail.touched" class="invalid-feedback">
+            <div *ngIf="mail.errors?.['required'] && mail.touched">
+              email is required
+            </div>
+            
           </div>
-          <div *ngIf="email.errors?.['email']">Please enter correct Email</div>
+          <div *ngIf="mail.errors?.['email']" style="color:rgb(250, 164, 164)">Please enter correct Email</div>
         </div>
-      </div>
       <div class="form-group mb-3">
         <label for="date">Date</label>
         <input type="date" name="date" id="date" class="form-control" />
@@ -71,18 +71,19 @@
       <div id="radio">
         <div>Name of the City</div>
         <div class="form-check">
-          <input type="radio" name="city" class="form-check-input" ngModel #city="ngModel" />
+          <input type="radio" name="city" class="form-check-input" [(ngModel)]="city" />
           <label for="radio" class="form-check-label">Nagpur</label>
         </div>
         <div class="form-check">
-          <input type="radio" name="city" class="form-check-input" ngModel #city="ngModel" />
+          <input type="radio" name="city" class="form-check-input" [(ngModel)]="city" />
           <label class="form-check-label">Hyderabd</label>
         </div>
         <div class="form-check">
-          <input type="radio" name="city"  class="form-check-input" ngModel #city="ngModel" />
+          <input type="radio" name="city"  class="form-check-input" [(ngModel)]="city" />
           <label class="form-check-label">Mumbai</label>
         </div>
 
+        
         
       </div>
 
@@ -128,6 +129,7 @@
         </div>
       </div>
       <br />
+
       <div class="form-group mb-3">
         <label for="password" class="form-label">Password</label>
         <input
@@ -135,16 +137,17 @@
           name="password"
           id="password"
           class="form-control"
-          ngModel
-          #password="ngModel"
-          [ngClass]="{ 'is-invalid': password.invalid && password.touched }"
+          [(ngModel)]="password"
+          #pass="ngModel"
+          [ngClass]="{'is-invalid':pass.invalid && pass.touched}"
+          
           required
         />
         <div
-          *ngIf="password.invalid && password.touched"
+          *ngIf="pass.invalid && pass.touched"
           class="invalid-feedback"
         >
-          <div *ngIf="password.errors?.['required'] && password.touched">
+          <div *ngIf="pass.errors?.['required'] && pass.touched">
             Password is required
           </div>
         </div>
@@ -155,31 +158,32 @@
         <label for="ConformPassword" class="form-label">Confrom Password</label>
         <input
           type="password"
-          name="Conformpassword"
+          name="name"
           id="ConformPassword"
           class="form-control"
-          ngModel
-          #Conformpassword="ngModel"
-          [ngClass]="{
-            'is-invalid': Conformpassword.invalid && Conformpassword.touched
-          }"
+          [(ngModel)]="conformpassword" 
+          #name="ngModel"
+          [ngClass]="{'is-invalid':name.touched && name.invalid}"
           required
         />
+        
         <div
-          *ngIf="Conformpassword.invalid && Conformpassword.touched"
+          *ngIf="name.invalid && name.touched"
           class="invalid-feedback"
         >
           <div
-            *ngIf="Conformpassword.errors?.['required'] && Conformpassword.touched"
+            *ngIf="name.errors?.['required'] && name.touched"
           >
             Password is required
           </div>
 
-          <div *ngIf="Conformpassword !== password">
-            Password is not correct
-          </div>
-
+          
         </div>
+
+        <div *ngIf="conformpassword!==password" style="color:rgb(196, 84, 84)">
+          password did not match
+        </div>
+        
       </div>
       
       <button type="button" class="btn btn-primary" style="width: 1300px" [disabled]="form.invalid" (click)="onsubmit()">

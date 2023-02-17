@@ -10,7 +10,8 @@ export class TDFRagistrationComponent {
   lastname:string="";
   email:string="";
   password:string=""
-  conformPassword=""
+  conformpassword=""
+  city:string="";
 
   onsubmit(){
     console.log('is write')
