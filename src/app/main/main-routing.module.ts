@@ -15,6 +15,7 @@ import { CurdApplicatonComponent } from '../Day7/curd-applicaton/curd-applicaton
 import { ObservableServiceTaskComponent } from '../Day7/observable-service-task/observable-service-task.component';
 import { ListCompComponent } from '../Day7/list-comp/list-comp.component';
 import { UpdateComponent } from '../Day7/update/update.component';
+import { CounterComponent } from '../Day8/counter/counter.component';
 const routes: Routes = [ 
     {path:"home", component:DirectiveNgforComponent}, 
     {path:"contactus", component:DirectiveSwitchComponent} ,
@@ -30,6 +31,7 @@ const routes: Routes = [
     {path:"listcomp",component:ListCompComponent},
     {path:"of",component:ObservableServiceTaskComponent},
     {path:'app-update',component:UpdateComponent},
+    {path:'counter',component:CounterComponent}
     // {path: '', redirectTo: '/Form', pathMatch: 'full'},
  ];
  

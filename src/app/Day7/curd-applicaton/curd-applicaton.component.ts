@@ -23,7 +23,7 @@ export class CurdApplicatonComponent {
       })
 
 add(emp:any){
-  this.eserviceService.AddEmployee(emp)  ;
+  this.eserviceService.AddEmployee(emp).subscribe((emp)=>console.log(emp)) ;
   this.router.navigate(['listcomp'])
 
 }

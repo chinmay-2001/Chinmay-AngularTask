@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { employee } from '../curd-applicaton/Employee';
 import { EserviceService } from 'src/app/eservice.service';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-list-comp',
   templateUrl: './list-comp.component.html',
@@ -10,11 +11,11 @@ import { Router } from '@angular/router';
 export class ListCompComponent implements OnInit{
   constructor(private eservice:EserviceService,private route:Router) {
   }
-  emp:any=[];
+  emp:employee[]=[];
   ngOnInit(): void {
-    this.eservice.FetchEmployee();
+    this.eservice.FetchEmployee().subscribe(data=> this.emp=data );
     // console.log(this.eservice.getData())
-    this.emp=this.eservice.getData();
+    // this.emp=this.eservice.getData();
     // console.log(this.emp);
   }
 

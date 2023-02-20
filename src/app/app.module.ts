@@ -35,6 +35,11 @@ import { CurdApplicatonComponent } from './Day7/curd-applicaton/curd-applicaton.
 import { ObservableServiceTaskComponent } from './Day7/observable-service-task/observable-service-task.component';
 import { ListCompComponent } from './Day7/list-comp/list-comp.component';
 import { UpdateComponent } from './Day7/update/update.component';
+import { CounterComponent } from './Day8/counter/counter.component';
+
+import {StoreModule} from '@ngrx/store'
+import { counterReducer } from './Day8/Store/reducers/counter.reducer';
+import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/product-list.component';
 
 
 
@@ -69,6 +74,10 @@ import { UpdateComponent } from './Day7/update/update.component';
     ObservableServiceTaskComponent,
     ListCompComponent,
     UpdateComponent,
+    CounterComponent,
+    ProductListComponent,
+   
+    
     
   ],
   imports: [
@@ -77,7 +86,8 @@ import { UpdateComponent } from './Day7/update/update.component';
     CommonModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({count:counterReducer})
   ],
   providers: [DateserviceService],
   bootstrap: [AppComponent]

@@ -1,27 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { employee } from './Day7/curd-applicaton/Employee';
+
+const httpOptions={
+  headers:new HttpHeaders({'Content-Type':'application/json'})
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class EserviceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+
+   }
+   
   data:employee[]=[] ;
   fetched:boolean=false;  
-  FetchEmployee(){
-    this.http.get<employee[]>('assets/employee.json').subscribe((response)=>{
+  FetchEmployee():Observable<employee[]>{
+    // this.http.get<employee[]>('assets/employee.json').subscribe((response)=>{
       
-      // this.data=response;
-        if(!this.fetched){
-          this.convert(response)
-          console.log(response)
-          console.log(this.data)
-          this.fetched=true;
-      }
-    })
+    //   // this.data=response;
+    //     if(!this.fetched){
+    //       this.convert(response)
+    //       console.log(response)
+    //       console.log(this.data)
+    //       this.fetched=true;
+    //   }
+    // })
+    return this.http.get<employee[]>('assets/employee.json');
+    
   }
   convert(response:any){
     for(let o of response){
@@ -32,8 +42,10 @@ export class EserviceService {
     return this.data;
   }
 
-  AddEmployee(e:employee){
-    this.data.push(e);
+  AddEmployee(e:employee) : Observable<employee>{
+    // this.data.push(e);
+    console.log(e);
+    return this.http.post<employee>('assets/employees',e,httpOptions)
   }
   
   DeleteEmployee(id:number){
