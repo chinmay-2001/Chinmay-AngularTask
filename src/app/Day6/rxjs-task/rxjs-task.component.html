@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of productNameList">
+                    <td>{{prod}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of productlist">
+                    <td>{{prod.pName}}</td>
+                    <td>{{prod.price}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Canditaes Name</th>
+                    <th>Technology</th>
+                    <th>City</th>
+                    <th>Experience</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of punecandidated">
+                    <td>{{stud.name}}</td>
+                    <td>{{stud.technology}}</td>
+                    <td>{{stud.city}}</td>
+                    <td>{{stud.experience}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stud of technologylist |keyvalue">
+                    <td>{{stud.key}}</td>
+                    <td>{{stud.value}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Experiece</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let can of sortcandidate">
+                    <td>{{can.name}}</td>
+                    <td>{{can.experience}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <div class="row"> 
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Experiece</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let can of freshercandidate">
+                    <td>{{can.name}}</td>
+                    <td>{{can.experience}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

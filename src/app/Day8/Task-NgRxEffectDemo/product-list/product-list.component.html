@@ -1,1 +1,18 @@
-<p>product-list works!</p>
+<div class="row mt-4 text-center" style="font-family: cursive">
+  <div
+    class="col-md-3"
+    *ngFor="let product of products$ | async; let i = index"
+  >
+    <div class="card shadow">
+      <img src="{{ product.productImg }}" alt="{{ product.productName }}" />
+      <div class="card-body">
+        <h5>{{ product.productName }}</h5>
+        <h6>Brand: {{ product.productBrand }}</h6>
+        <h6 class="text text-success">
+          Price: {{ product.productPrice | currency : "INR" }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <!-- <span *ngIf="errorMessage$">{{ errorMessage$ | async }}</span> -->
+</div>

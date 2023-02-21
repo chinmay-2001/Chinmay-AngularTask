@@ -16,6 +16,8 @@ import { ObservableServiceTaskComponent } from '../Day7/observable-service-task/
 import { ListCompComponent } from '../Day7/list-comp/list-comp.component';
 import { UpdateComponent } from '../Day7/update/update.component';
 import { CounterComponent } from '../Day8/counter/counter.component';
+import { ProductListComponent } from '../Day8/Task-NgRxEffectDemo/product-list/product-list.component';
+import { RxjsTaskComponent } from '../Day6/rxjs-task/rxjs-task.component';
 const routes: Routes = [ 
     {path:"home", component:DirectiveNgforComponent}, 
     {path:"contactus", component:DirectiveSwitchComponent} ,
@@ -31,7 +33,9 @@ const routes: Routes = [
     {path:"listcomp",component:ListCompComponent},
     {path:"of",component:ObservableServiceTaskComponent},
     {path:'app-update',component:UpdateComponent},
-    {path:'counter',component:CounterComponent}
+    {path:'counter',component:CounterComponent},
+    {path:'product',component:ProductListComponent},
+    {path:'rxjstask',component:RxjsTaskComponent}
     // {path: '', redirectTo: '/Form', pathMatch: 'full'},
  ];
  

@@ -37,12 +37,25 @@ import { ListCompComponent } from './Day7/list-comp/list-comp.component';
 import { UpdateComponent } from './Day7/update/update.component';
 import { CounterComponent } from './Day8/counter/counter.component';
 
-import {StoreModule} from '@ngrx/store'
+import {ActionReducer, StoreModule,MetaReducer} from '@ngrx/store'
 import { counterReducer } from './Day8/Store/reducers/counter.reducer';
 import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/product-list.component';
+import { productReducer } from './Day8/Task-NgRxEffectDemo/Store/reducers/product.reducer'
+import { EffectsModule } from '@ngrx/effects'
+import { ProductEffect } from './Day8/Task-NgRxEffectDemo/Store/effect/product.effect';
+import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component'; 
 
+// export function debug(reducer : ActionReducer<any>):ActionReducer<any>{
+//  return function(state,action){
+//   console.log('Previous state',state)
+//   console.log('Action',action)
+//   let nextState=reducer(state,action)
+//   console.log("current state",nextState)
+//   return nextState;
+//  }
+// }
 
-
+// export const metaReducers:MetaReducer<any>[]=[debug]
 
 @NgModule({
   declarations: [
@@ -76,6 +89,7 @@ import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/pr
     UpdateComponent,
     CounterComponent,
     ProductListComponent,
+    RxjsTaskComponent,
    
     
     
@@ -87,7 +101,10 @@ import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/pr
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({count:counterReducer})
+    // StoreModule.forRoot({count:counterReducer},{metaReducers}),
+    StoreModule.forRoot({count:counterReducer}),
+    // EffectsModule.forRoot({ProductEffect})
+    
   ],
   providers: [DateserviceService],
   bootstrap: [AppComponent]
