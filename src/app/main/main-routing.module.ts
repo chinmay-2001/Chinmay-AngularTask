@@ -18,8 +18,9 @@ import { UpdateComponent } from '../Day7/update/update.component';
 import { CounterComponent } from '../Day8/counter/counter.component';
 import { ProductListComponent } from '../Day8/Task-NgRxEffectDemo/product-list/product-list.component';
 import { RxjsTaskComponent } from '../Day6/rxjs-task/rxjs-task.component';
+import { AccessGuardService } from '../Day5/access-guard.service';
 const routes: Routes = [ 
-    {path:"home", component:DirectiveNgforComponent}, 
+    {path:"home", component:DirectiveNgforComponent,canActivate:[AccessGuardService]}, 
     {path:"contactus", component:DirectiveSwitchComponent} ,
     {path:"Form", component:TDFRagistrationComponent},
     {path:"promise", component:PromisesComponent},

@@ -43,7 +43,7 @@ import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/pr
 import { productReducer } from './Day8/Task-NgRxEffectDemo/Store/reducers/product.reducer'
 import { EffectsModule } from '@ngrx/effects'
 import { ProductEffect } from './Day8/Task-NgRxEffectDemo/Store/effect/product.effect';
-import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component'; 
+import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
 
 // export function debug(reducer : ActionReducer<any>):ActionReducer<any>{
 //  return function(state,action){
@@ -90,6 +90,7 @@ import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
     CounterComponent,
     ProductListComponent,
     RxjsTaskComponent,
+    
    
     
     
