@@ -13,7 +13,8 @@ export class AccessGuardService {
     let data=this.sev.canLoginToday()
     console.log("here",this.sev.canLoginToday())
     if(this.sev.canLoginToday()){
-      this.router.navigate(['/home'])
+      this.router.navigate(['home'])
+      return true;
     }
     else{
       return false

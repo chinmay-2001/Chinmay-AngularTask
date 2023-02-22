@@ -7,13 +7,15 @@ export class UserService {
 
   constructor() { }
 
-  canLoginToday(){
+  canLoginToday():boolean{
     console.log("Hello")
     let today=new Date()
     console.log(today.getDay())
-    if(today.getDay()==0 || today.getDay()==6){
+    if(today.getDay()==0 && today.getDay()==6){
       return false;
     }
-    else return true
+    else {
+      return true
+    }
   }
 }

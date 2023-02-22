@@ -19,9 +19,10 @@ import { CounterComponent } from '../Day8/counter/counter.component';
 import { ProductListComponent } from '../Day8/Task-NgRxEffectDemo/product-list/product-list.component';
 import { RxjsTaskComponent } from '../Day6/rxjs-task/rxjs-task.component';
 import { AccessGuardService } from '../Day5/access-guard.service';
+import { LoginGuardComponent } from '../Day5/login-guard/login-guard.component';
 const routes: Routes = [ 
-    {path:"home", component:DirectiveNgforComponent,canActivate:[AccessGuardService]}, 
-    {path:"contactus", component:DirectiveSwitchComponent} ,
+    {path:"home", component:DirectiveNgforComponent}, 
+    {path:"contactus", component:DirectiveSwitchComponent,canActivate:[AccessGuardService]} ,
     {path:"Form", component:TDFRagistrationComponent},
     {path:"promise", component:PromisesComponent},
     {path:"observer", component:ObservableComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
     {path:'app-update',component:UpdateComponent},
     {path:'counter',component:CounterComponent},
     {path:'product',component:ProductListComponent},
-    {path:'rxjstask',component:RxjsTaskComponent}
+    {path:'rxjstask',component:RxjsTaskComponent},
+    {path:'loginGuard',component:LoginGuardComponent}
     // {path: '', redirectTo: '/Form', pathMatch: 'full'},
  ];
  

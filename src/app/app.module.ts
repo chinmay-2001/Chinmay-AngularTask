@@ -44,6 +44,7 @@ import { productReducer } from './Day8/Task-NgRxEffectDemo/Store/reducers/produc
 import { EffectsModule } from '@ngrx/effects'
 import { ProductEffect } from './Day8/Task-NgRxEffectDemo/Store/effect/product.effect';
 import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
+import { LoginGuardComponent } from './Day5/login-guard/login-guard.component';
 
 // export function debug(reducer : ActionReducer<any>):ActionReducer<any>{
 //  return function(state,action){
@@ -90,6 +91,7 @@ import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
     CounterComponent,
     ProductListComponent,
     RxjsTaskComponent,
+    LoginGuardComponent,
     
    
     
