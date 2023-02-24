@@ -1,8 +1,9 @@
-import { createReducer,on } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 import { initialState } from "../state/productStore";
-import { getProduct } from "../action/actions";
+import { getProducts } from "../action/actions";
 
 
-const proList=createReducer(initialState,
-    on(getProduct, (state) =>state
-    ))
+export const proList = createReducer(initialState,
+    on(getProducts, (state) => {return state}
+    )
+    )

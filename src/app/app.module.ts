@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common'
 import { AppComponent } from './app.component';
-
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './Day3/directives/directives.component';
@@ -45,6 +44,9 @@ import { EffectsModule } from '@ngrx/effects'
 import { ProductEffect } from './Day8/Task-NgRxEffectDemo/Store/effect/product.effect';
 import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
 import { LoginGuardComponent } from './Day5/login-guard/login-guard.component';
+import { proList } from './Day9/NgRxTask/store/reducer/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 // export function debug(reducer : ActionReducer<any>):ActionReducer<any>{
 //  return function(state,action){
@@ -93,9 +95,6 @@ import { LoginGuardComponent } from './Day5/login-guard/login-guard.component';
     RxjsTaskComponent,
     LoginGuardComponent,
     
-   
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -105,7 +104,13 @@ import { LoginGuardComponent } from './Day5/login-guard/login-guard.component';
     AppRoutingModule,
     HttpClientModule,
     // StoreModule.forRoot({count:counterReducer},{metaReducers}),
-    StoreModule.forRoot({count:counterReducer}),
+    // StoreModule.forRoot({counter:counterReducer}),
+    StoreModule.forRoot({pro:proList}),
+
+    // StoreDevtoolsModule.instrument({
+    //   maxAge: 25, // Retains last 25 states
+    //   logOnly: environment.production, // Restrict extension to log-only mode
+    // }),
     // EffectsModule.forRoot({ProductEffect})
     
   ],

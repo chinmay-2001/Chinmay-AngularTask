@@ -16,10 +16,10 @@ import { ObservableServiceTaskComponent } from '../Day7/observable-service-task/
 import { ListCompComponent } from '../Day7/list-comp/list-comp.component';
 import { UpdateComponent } from '../Day7/update/update.component';
 import { CounterComponent } from '../Day8/counter/counter.component';
-import { ProductListComponent } from '../Day8/Task-NgRxEffectDemo/product-list/product-list.component';
 import { RxjsTaskComponent } from '../Day6/rxjs-task/rxjs-task.component';
 import { AccessGuardService } from '../Day5/access-guard.service';
 import { LoginGuardComponent } from '../Day5/login-guard/login-guard.component';
+import { ProductListComponent } from '../Day9/NgRxTask/product-list/product-list.component';
 const routes: Routes = [ 
     {path:"home", component:DirectiveNgforComponent}, 
     {path:"contactus", component:DirectiveSwitchComponent,canActivate:[AccessGuardService]} ,
@@ -38,8 +38,9 @@ const routes: Routes = [
     {path:'counter',component:CounterComponent},
     {path:'product',component:ProductListComponent},
     {path:'rxjstask',component:RxjsTaskComponent},
-    {path:'loginGuard',component:LoginGuardComponent}
-    // {path: '', redirectTo: '/Form', pathMatch: 'full'},
+    {path:'loginGuard',component:LoginGuardComponent},
+    {path:"productlist",component:ProductListComponent},
+    {path: '', redirectTo: '/productlist', pathMatch: 'full'},
  ];
  
 

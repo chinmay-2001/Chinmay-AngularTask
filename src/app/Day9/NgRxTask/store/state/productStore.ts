@@ -1,5 +1,6 @@
-import { prod } from "../../product-list/prod";
-
-export const initialState={
-    getAllProduct:[]
-}
+export const initialState=
+    [{
+        id:1,
+        name:"realme",
+        price:0
+    }]

@@ -1,5 +1,3 @@
-import { createAction,props } from "@ngrx/store";
-import {prod} from  '../../product-list/prod' 
-
-export const getProduct=createAction("getProduct")
+import { createAction } from "@ngrx/store";
+export const getProducts=createAction("getProduct")
 
