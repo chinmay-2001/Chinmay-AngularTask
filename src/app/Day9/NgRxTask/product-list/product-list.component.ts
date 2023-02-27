@@ -13,8 +13,7 @@ export class ProductListComponent implements OnInit {
   constructor(private store:Store<fromRoot.AppState>){
   }
 
-  ngOnInit(): void {
-    //  this.store.dispatch({type:'getProduct'})      
+  ngOnInit(): void {     
     this.pro=this.store.select(fromRoot.selectFeaturePoduct)
     console.log(this.pro)
   }

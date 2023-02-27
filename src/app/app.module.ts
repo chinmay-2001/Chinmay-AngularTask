@@ -35,7 +35,6 @@ import { ObservableServiceTaskComponent } from './Day7/observable-service-task/o
 import { ListCompComponent } from './Day7/list-comp/list-comp.component';
 import { UpdateComponent } from './Day7/update/update.component';
 import { CounterComponent } from './Day8/counter/counter.component';
-
 import {ActionReducer, StoreModule,MetaReducer} from '@ngrx/store'
 import { counterReducer } from './Day8/Store/reducers/counter.reducer';
 import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/product-list.component';
@@ -104,8 +103,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     HttpClientModule,
     // StoreModule.forRoot({count:counterReducer},{metaReducers}),
-    // StoreModule.forRoot({counter:counterReducer}),
-    StoreModule.forRoot({pro:proList}),
+    StoreModule.forRoot({count:counterReducer}),
+    // StoreModule.forRoot({pro:proList}),
 
     // StoreDevtoolsModule.instrument({
     //   maxAge: 25, // Retains last 25 states

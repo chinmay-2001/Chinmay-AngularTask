@@ -1,6 +1,24 @@
 <div class="card shadow row col-md-6 offset-md-3 mt-5 text-center">
   <div class="card-body">
     <h3 style="font-family: cursive">Current Count: {{ count$ | async }}</h3>
+    <table>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of count$ | async">
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+              </tr>
+          </tbody>
+        </table>
+  </table>
     <button
       class="btn btn-outline-danger mr-2"
       id="increment"

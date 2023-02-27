@@ -9,12 +9,14 @@ import * as fromRoot from '../Store/selectors/counter.selector'
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
-    count$:Observable<number>;
+    // count$:Observable<number>;
+    count$:Observable<[]>;
     constructor(private store:Store<fromRoot.Appstate>){
         this.count$=this.store.pipe(select(fromRoot.selectFeaturecount))
+        console.log(this.count$)
     }
     increment(){
-      this.store.dispatch(increment());
+      this.store.dispatch(increment()); 
     }
     decrement(){
       this.store.dispatch(decrement())

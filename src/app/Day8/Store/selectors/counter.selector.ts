@@ -1,6 +1,7 @@
 import { createSelector } from '@ngrx/store'
 export interface featureState{
-    counter:number;
+    // counter:number;
+    counter:[]
 }
 export interface Appstate{
     count:featureState;
