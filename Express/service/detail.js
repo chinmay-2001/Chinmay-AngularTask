@@ -14,6 +14,7 @@ movies= [
             if(((movies[i]["name"]).toLowerCase())==((mname).toLowerCase()))
                 return movies[i]
         }
+        
     }
 
     moviesDetails.addMovieDetail=(Movie)=>{
