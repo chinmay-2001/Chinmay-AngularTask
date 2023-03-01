@@ -7,15 +7,9 @@ routing.get('/getBook',(req,res)=>{
     res.json(books.getbooks())
 })
 
-routing.post('/addBook',(req,res)=>{
-    result=books.addbook(JSON.stringify(req.body));
+routing.post('/addBook', (req, res) => {
     console.log(req.body)
-    if(result){
-        res.json('successfully added the movie')
-    }
-    else{
-        res.json("Unsuccessful")
-    }
+    res.send(req.body)
 })
 module.exports=routing
 
