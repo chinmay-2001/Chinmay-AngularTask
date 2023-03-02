@@ -1,11 +1,10 @@
+const { ObjectId } = require('mongodb')
 var mongoose=require('mongoose')
 const empSchema= mongoose.Schema({
+    // "_id":Number,
     "empName":String,
-    "address":{
-        "doorNo":String,
-        "lane":String,
-        "pincode":Number
-    }
+    "empPhoneNo":Number,
+    "empEmail":String
 },{
     timestamps:true
 })

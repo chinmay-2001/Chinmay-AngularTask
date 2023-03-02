@@ -4,6 +4,8 @@ var bodyparse=require('body-parser')
 app=express()
 var mongoose=require('mongoose')
 
+const cors = require("cors");
+app.use(cors())
 var dburl=require('./config/congfig')
 
 app.use(bodyparse.urlencoded({extended:true}))

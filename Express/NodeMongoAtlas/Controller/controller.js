@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb")
 const { model } = require("mongoose")
 const Emp =require('../Model/model.js')
 
@@ -16,8 +17,12 @@ const getEmployee=(req,res)=>{
 
 const createEmployee=(req,res)=>{
     
-    Emp.create({empName:"Aman",
-                address:[{doorNo:"105",lane:"PhaseI",pincode:440002}]}).then(data=>{
+    Emp.create({
+                empName:req.body.empName,
+                empPhoneNo:req.body.phoneNo,
+                empEmail:req.body.email
+              })
+                .then(data=>{
                     res.send(data)
                 })
                 .catch(err=>{
@@ -44,6 +49,7 @@ const getSingleEmployee=(req,res)=>{
 const deleteEmployee=(req,res)=>{
     Emp.findByIdAndRemove(req.params.empId)
     .then(data=>{
+        console.log("here")
         res.send(data);
     })
     .catch(err=>{
@@ -52,8 +58,11 @@ const deleteEmployee=(req,res)=>{
 }
 
 const updateEmployee=(req,res)=>{
+    console.log("inside update Employee")
+    console.log("empName:",req.params.empId)
     Emp.findByIdAndUpdate(req.params.empId,{
-        empName:req.body.empName    
+        $set:{empName:req.body.empName,empPhoneNo:req.body.phoneNo,empEmail:req.body.email}    
+        // $set:{empName:req.body.empName}
     },{new:true})
     .then(data=>{
         res.send(data)

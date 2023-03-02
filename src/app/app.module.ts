@@ -35,7 +35,7 @@ import { ObservableServiceTaskComponent } from './Day7/observable-service-task/o
 import { ListCompComponent } from './Day7/list-comp/list-comp.component';
 import { UpdateComponent } from './Day7/update/update.component';
 import { CounterComponent } from './Day8/counter/counter.component';
-import {ActionReducer, StoreModule,MetaReducer} from '@ngrx/store'
+import { ActionReducer, StoreModule, MetaReducer } from '@ngrx/store'
 import { counterReducer } from './Day8/Store/reducers/counter.reducer';
 import { ProductListComponent } from './Day8/Task-NgRxEffectDemo/product-list/product-list.component';
 import { productReducer } from './Day8/Task-NgRxEffectDemo/Store/reducers/product.reducer'
@@ -45,6 +45,13 @@ import { RxjsTaskComponent } from './Day6/rxjs-task/rxjs-task.component';
 import { LoginGuardComponent } from './Day5/login-guard/login-guard.component';
 import { proList } from './Day9/NgRxTask/store/reducer/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EmployeeListComponent } from './FrontendForEmloyee/employee-list/employee-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 // export function debug(reducer : ActionReducer<any>):ActionReducer<any>{
@@ -93,7 +100,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ProductListComponent,
     RxjsTaskComponent,
     LoginGuardComponent,
-    
+    EmployeeListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -102,8 +110,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatChipsModule,
+    BrowserAnimationsModule,
     // StoreModule.forRoot({count:counterReducer},{metaReducers}),
-    StoreModule.forRoot({count:counterReducer}),
+    StoreModule.forRoot({ count: counterReducer }),
     // StoreModule.forRoot({pro:proList}),
 
     // StoreDevtoolsModule.instrument({
@@ -111,7 +124,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     //   logOnly: environment.production, // Restrict extension to log-only mode
     // }),
     // EffectsModule.forRoot({ProductEffect})
-    
+
   ],
   providers: [DateserviceService],
   bootstrap: [AppComponent]
