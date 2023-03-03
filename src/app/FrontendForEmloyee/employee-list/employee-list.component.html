@@ -24,7 +24,7 @@
 
         <!-- Modal body -->
         <div class="modal-body">
-          <form [formGroup]="EmployeeDetail">
+          <form>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label"
                 >Employee Name</label
@@ -47,7 +47,6 @@
                 class="form-control"
                 id="phoneNo"
                 placeholder="PhoneNo"
-                formControlName="phoneNo"
                 [(ngModel)]="phoneNo"
               />
             </div>
@@ -60,7 +59,6 @@
                 class="form-control"
                 id="Email"
                 placeholder="email"
-                formControlName="email"
                 [(ngModel)]="email"
               />
             </div>
@@ -92,7 +90,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Employee</th>
+          <th scope="col">Employee Name</th>
           <th scope="col">Employee phone NO:</th>
           <th scope="col">Employee Email Id</th>
           <th scope="col">Update Employee</th>
@@ -101,7 +99,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let emp of emplist">
-          <th>{{ emp._id }}</th>
           <th scope="row">{{ emp.empName }}</th>
           <td>{{ emp.empPhoneNo }}</td>
           <td>{{ emp.empEmail }}</td>

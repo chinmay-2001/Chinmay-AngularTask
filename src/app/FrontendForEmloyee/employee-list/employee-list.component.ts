@@ -12,24 +12,24 @@ export class EmployeeListComponent {
   email: string = ""
   empid: string = ""
 
-  EmployeeDetail = new FormGroup({
-    empid: new FormControl(),
-    empName: new FormControl(),
-    phoneNo: new FormControl(),
-    email: new FormControl(),
-  })
+
   emplist: any;
   constructor(private http: HttpClient) {
     this.http.get('http://localhost:3000/api/empDetail').subscribe(ev => this.emplist = ev)
   }
 
+  fetch() {
+    this.http.get('http://localhost:3000/api/empDetail').subscribe(ev => this.emplist = ev)
+  }
   deleteEmployee(id: number) {
 
     this.http.delete(`http://localhost:3000/api/deleteEmployee/${id}`).subscribe(ev => console.log(ev))
+    this.fetch()
   }
   creatEmp() {
-    console.log("here")
+
     this.http.post('http://localhost:3000/api/createEmployee', { empName: this.empName, phoneNo: this.phoneNo, email: this.email }).subscribe(ev => console.log(ev))
+    this.fetch()
   }
 
   updateempName: string = ""
@@ -43,7 +43,8 @@ export class EmployeeListComponent {
   }
 
   updateEmp() {
-    console.log("empname:", this.updateempName)
+
     this.http.put(`http://localhost:3000/api/updateEmployee/${this.obj._id}`, { empName: this.updateempName, phoneNo: this.updatephoneNo, email: this.updateemail }).subscribe(ev => console.log(ev))
+    this.fetch()
   }
 }
