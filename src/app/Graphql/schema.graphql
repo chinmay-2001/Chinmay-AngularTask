@@ -1,0 +1,21 @@
+
+type Query{
+    hello:String
+    employee:[Employee]
+    companies:[Company]
+}
+
+type Employee{
+    id:ID!
+    firstName:String
+    lastName:String
+    password:String
+    companyId:String
+}
+
+type Company{
+id:ID!
+name:String
+location:String
+rating:Int
+}
