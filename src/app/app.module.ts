@@ -51,6 +51,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContainerProductListComponent } from './Day9/NgRxTask/container-product-list/container-product-list.component';
 
 
 
@@ -101,6 +102,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RxjsTaskComponent,
     LoginGuardComponent,
     EmployeeListComponent,
+    ContainerProductListComponent,
 
   ],
   imports: [

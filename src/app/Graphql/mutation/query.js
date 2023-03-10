@@ -1,6 +1,7 @@
 const { GraphQLObjectType,
     GraphQLString,
-    GraphQLInt
+    GraphQLInt,
+    GraphQLList
 } = require('graphql');
 
 const _=require('lodash')
@@ -20,12 +21,16 @@ const queryType=new GraphQLObjectType({
             }
         },
         movie:{
+            // type:movieType,
             type:movieType,
-            args:{
-                id:{type:GraphQLInt}
-            },
-            resolve:function(source,args){
-                return _.find(movies,{id:args.id})
+            // args:{
+            //     id:{type:GraphQLInt}
+            // },
+            // resolve:function(source,args){
+            //     return _.find(movies,{id:args.id})
+            // }
+            resolve:function(){
+                return movies
             }
         },
         director:{
