@@ -1,4 +1,5 @@
 const { ApolloServer,gql } = require('apollo-server')
+
 const typeDefs=gql`
 type Company{
     name:String
@@ -7,8 +8,8 @@ type Company{
 type Query {
     companies:[Company]
 }
-
 `
+
 const companies=[{
     name:'infosys',
     owner:'N.R Narayan Murthy'
